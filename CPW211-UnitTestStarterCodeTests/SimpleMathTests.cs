@@ -67,13 +67,30 @@ namespace CPW211_UnitTestStarterCode.Tests
         public void Divide_TwoNumbers_ReturnTotal( double value1, double value2 )
         {
             // Arrange
-            
+            double expectedTotal = value1 / value2;
 
             // Act
+            double returnValue = SimpleMath.Divide(value1, value2);
 
             // Assert
+            Assert.AreEqual(expectedTotal, returnValue);
         }
 
-        // TODO: Test subtract method with two valid numbers
+        [TestMethod]
+        [DataRow(5, 12.5)]
+        [DataRow(-3, 100)]
+        [DataRow(-1.5, -10)]
+        [DataRow(8, -10)]
+        public void Subtract_TwoNumbers_ReturnTotal( double value1, double value2 )
+        {
+            // Arrange
+            double expectedTotal = value1 - value2;
+
+            // Act
+            double returnValue = SimpleMath.Subtract(value1, value2);
+
+            // Assert
+            Assert.AreEqual(expectedTotal, returnValue);
+        }
     }
 }
